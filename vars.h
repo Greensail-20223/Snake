@@ -47,18 +47,13 @@ constexpr auto SNAKE_DIRECTION_RIGHT = 1;
 constexpr auto SNAKE_DIRECTION_DOWN = 2;
 constexpr auto SNAKE_DIRECTION_LEFT = 3;
 
-const static int field_size_x = 34;
-const static int field_size_y = 19;
-
-const static int high_field_size_x = 40;
-const static int high_field_size_y = 25;
+const static int field_size_x = 40;
+const static int field_size_y = 25;
 
 const static int cell_size = 32;
 const static int window_width = field_size_x * cell_size;
 const static int window_height = field_size_y * cell_size;
 
-const static int high_window_width = high_field_size_x * cell_size;
-const static int high_window_height = high_field_size_y * cell_size;
 
 const static int main_menu_width = 25 * cell_size;
 const static int main_menu_height = 20 * cell_size;
@@ -105,9 +100,9 @@ struct GameState {
 };
 
 struct HighGameState {
-    int field[high_field_size_y][high_field_size_x];
-    int snake_position_x = high_field_size_x / 2;
-    int snake_position_y = high_field_size_y / 2;
+    int field[field_size_y][field_size_x];
+    int snake_position_x = field_size_x / 2;
+    int snake_position_y = field_size_y / 2;
     int snake_length = 4;
     int snake_direction = SNAKE_DIRECTION_RIGHT;
     int score = 0;
@@ -119,13 +114,9 @@ struct HighGameState {
 
 static GameState game_state;
 
-static HighGameState high_game_state;
-
 static std::vector <GameState> game_last_states;
 
-static std::vector <HighGameState> high_game_last_states;
-
-static bool rall_back = false;
+static bool roll_back = false;
 
 static sf::Font font_menu;
 
@@ -148,18 +139,11 @@ static std::vector <std::string> pause_menu_items = {"Score: ", "Resume", "Exit 
 
 static std::vector <std::string> volume_menu_items = {"Volume: ", "Exit to main menu", "Volume settings"};
 
-static std::vector <std::string> level_menu_items = {"Level 1", "Level 2", "Level 3", "Level 4", "Back to main menu", "Choose level"};
-
 static std::vector<std::string> help_menu_items = {"Apples: ", "\t*Green - random trap", "\t*Golden - random bonus",
-                                                   "\t*Red - food for snake", "Heart - every 3 gives life,\nremoves bad effect",
-                                                   "Space - game pause", "Tab - to turn off the music",
-                                                   "X - to turn on the music", "Enter to close help", "Help"};
-
-static std::vector<std::string> high_help_menu_items = {"Apples: ", "\t*Green - random trap", "\t*Golden - random bonus",
                                                         "\t*Red - food for snake", "Heart - every 5 gives life,\nremoves bad effect",
                                                         "Space - game pause", "Tab - to turn off the music",
                                                         "X - to turn on the music", "Enter to close help", "Help"};
-static std::vector <std::string> high_level_menu_items = {"Level 1", "Level 2", "Level 3", "Level 4", "Level 5",
+static std::vector <std::string> level_menu_items = {"Level 1", "Level 2", "Level 3", "Level 4", "Level 5",
                                                      "Level 6" , "Level 7", "Back to main menu", "Choose level"};
 
 

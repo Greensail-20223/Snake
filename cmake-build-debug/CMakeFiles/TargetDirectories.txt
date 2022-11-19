@@ -1,3 +1,3 @@
-F:/Snake_2_C++/cmake-build-debug/CMakeFiles/Snake_2_C__.dir
-F:/Snake_2_C++/cmake-build-debug/CMakeFiles/edit_cache.dir
-F:/Snake_2_C++/cmake-build-debug/CMakeFiles/rebuild_cache.dir
+/home/greensail/CLionProjects/SnakeProjectNew/cmake-build-debug/CMakeFiles/Snake_2_C__.dir
+/home/greensail/CLionProjects/SnakeProjectNew/cmake-build-debug/CMakeFiles/edit_cache.dir
+/home/greensail/CLionProjects/SnakeProjectNew/cmake-build-debug/CMakeFiles/rebuild_cache.dir
